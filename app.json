@@ -32,25 +32,27 @@
       "output": "static"
     },
     "plugins": [
-      "expo-video",
-      "./app-plugin.js",
+      [
+        "expo-video",
+        {
+          "supportsBackgroundPlayback": false,
+          "supportsPictureInPicture": false
+        }
+      ],
       [
         "expo-build-properties",
         {
           "android": {
             "enableProguardInReleaseBuilds": true,
-            "extraMavenRepos": [
-              "https://jitpack.io"
-            ],
-            "enableMinifyInReleaseBuilds": true
+            "extraMavenRepos": ["https://jitpack.io"]
           }
         }
-      ]
+      ],
+      "./app-plugin.js"
     ],
     "extra": {
       "eas": {
-        "routerRoot": "/app",
-        "projectId": "eb2c1571-9e4d-4ee6-8b70-84c09d9cfa6b"
+        "routerRoot": "/app"
       }
     }
   }
