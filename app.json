@@ -44,7 +44,10 @@
         {
           "android": {
             "enableProguardInReleaseBuilds": true,
-            "extraMavenRepos": ["https://jitpack.io"]
+            "extraMavenRepos": [
+              "https://jitpack.io"
+            ],
+            "enableMinifyInReleaseBuilds": true
           }
         }
       ],
@@ -52,7 +55,8 @@
     ],
     "extra": {
       "eas": {
-        "routerRoot": "/app"
+        "routerRoot": "/app",
+        "projectId": "3df3d0a4-94c9-45e4-bfd0-61e8e23871af"
       }
     }
   }
