@@ -12,7 +12,7 @@ import MainTabs from './MainTab';
 import CollectionScreen from '../screens/CollectionScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import BookingScreen from '../screens/BookingScreen';
-import CheckoutScreen from '../screens/CheckoutScreen';
+//import CheckoutScreen from '../screens/CheckoutScreen';
 import ReceiptScreen from '../screens/ReceiptScreen';
 import OrdersScreen from '../screens/OrderScreen';
 import SavedItemsScreen from '../screens/SaveItemsScreen';
@@ -56,7 +56,7 @@ export default function AppNavigator() {
           <Stack.Screen name="Collections" component={CollectionScreen} />
           <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
           <Stack.Screen name="Booking" component={BookingScreen} />
-          <Stack.Screen name="Checkout" component={CheckoutScreen} />
+          {/* <Stack.Screen name="Checkout" component={CheckoutScreen} /> */}
           <Stack.Screen name="Receipt" component={ReceiptScreen} />
           <Stack.Screen name="Orders" component={OrdersScreen} />
           <Stack.Screen name="SavedItems" component={SavedItemsScreen} />

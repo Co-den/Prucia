@@ -8,40 +8,36 @@ import {
   Animated,
   Dimensions,
 } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Video } from "expo-av";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width, height } = Dimensions.get("window");
 
 const slides = [
   {
     key: "1",
-    type: "video",
     title: "Welcome to PruciaStore",
     description: "Experience fashion that speaks elegance, comfort, and class.",
-    video: {
-      uri: "https://drive.google.com/uc?export=download&id=1e7AVOYcqlko_0jIdj4IUrhuStuYFXg6b",
-    },
+    image: require("../assets/k6.jpeg"),
   },
   {
     key: "2",
     title: "Handcrafted Perfection",
     description: "Every stitch is a story. Discover the art behind each piece.",
-    image: {uri:'../assets/p2.jpg'},
+    image: require("../assets/k5.jpeg"),
   },
   {
     key: "3",
     title: "Your Style, Delivered",
     description:
       "From our atelier to your doorstep effortlessly stylish and timely.",
-    image: {uri:'../assets/k1.jpg'},
+    image: require("../assets/k1.jpg"),
   },
   {
     key: "4",
     title: "Join the PRUCIA Family",
     description:
       "Create your account and step into the world of premium fashion.",
-    image: {uri:'../assets/p4.jpg'},
+    image: require("../assets/p1.jpg"),
   },
 ];
 
@@ -67,28 +63,10 @@ export default function OnboardingScreen({ navigation, onFinish }) {
   }).current;
 
   const viewConfigRef = useRef({
-    viewAreaCoveragePercentThreshold: 50, // Adjust this threshold as needed
+    viewAreaCoveragePercentThreshold: 50,
   });
 
   const renderItem = ({ item, index }) => {
-    if (item.type === "video") {
-      return (
-        <View style={styles.background}>
-          <Video
-            source={item.video}
-            style={styles.video}
-            resizeMode="cover"
-            shouldPlay
-            isLooping
-          />
-          <View style={styles.overlay}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.description}>{item.description}</Text>
-          </View>
-        </View>
-      );
-    }
-
     return (
       <ImageBackground
         source={item.image}
@@ -125,7 +103,7 @@ export default function OnboardingScreen({ navigation, onFinish }) {
         showsHorizontalScrollIndicator={false}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-          { useNativeDriver: false }
+          { useNativeDriver: false },
         )}
         onViewableItemsChanged={onViewableItemsChanged}
         viewabilityConfig={viewConfigRef.current}
@@ -169,13 +147,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  video: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: width,
-    height: height,
-  },
   overlay: {
     backgroundColor: "rgba(0,0,0,0.4)",
     width: "100%",
@@ -183,6 +154,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 30,
+  },
+  textbox: {
+    // Add specific styles if needed
   },
   title: {
     fontSize: 56,
@@ -202,7 +176,7 @@ const styles = StyleSheet.create({
   },
   getStartedButton: {
     marginTop: 30,
-    backgroundColor: "#28a745",
+    backgroundColor: "#e70dd5",
     paddingVertical: 14,
     paddingHorizontal: 50,
     borderRadius: 10,
@@ -246,7 +220,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   nextButton: {
-    backgroundColor: "#007aff",
+    backgroundColor: "#ef18f7",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 6,

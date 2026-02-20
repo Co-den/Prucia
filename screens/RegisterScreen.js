@@ -19,7 +19,7 @@ export default function SignupScreen({ navigation }) {
     lastName: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    passwordConfirm: "",
     state: "",
     country: "",
   });
@@ -34,7 +34,7 @@ export default function SignupScreen({ navigation }) {
       lastName,
       email,
       password,
-      confirmPassword,
+      passwordConfirm,
       state,
       country,
     } = form;
@@ -44,14 +44,14 @@ export default function SignupScreen({ navigation }) {
       !lastName ||
       !email ||
       !password ||
-      !confirmPassword ||
+      !passwordConfirm ||
       !state ||
       !country
     ) {
       return Alert.alert("Error", "All fields are required.");
     }
 
-    if (password !== confirmPassword) {
+    if (password !== passwordConfirm) {
       return Alert.alert("Error", "Passwords do not match.");
     }
 
@@ -60,13 +60,15 @@ export default function SignupScreen({ navigation }) {
       Alert.alert("Success", "Account created successfully!");
       navigation.replace("Login");
     } catch (err) {
-      Alert.alert("Signup Error", err.message);
+      const msg =
+        (err && err.message) || String(err) || "An unexpected error occurred";
+      Alert.alert("Signup Error", msg);
     }
   };
 
   return (
     <ImageBackground
-      source={{uri:'../assets/p5.jpg'}}
+      source={require("../assets/k9.jpeg")}
       style={styles.background}
       resizeMode="cover"
     >
@@ -110,7 +112,7 @@ export default function SignupScreen({ navigation }) {
             placeholder="Confirm Password"
             placeholderTextColor="#ddd"
             secureTextEntry
-            onChangeText={(text) => handleChange("confirmPassword", text)}
+            onChangeText={(text) => handleChange("passwordConfirm", text)}
           />
 
           <View style={styles.row}>
@@ -179,14 +181,14 @@ const styles = StyleSheet.create({
     width: "48%",
   },
   signupButton: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ff6f61",
     paddingVertical: 14,
     borderRadius: 10,
     marginTop: 10,
     marginBottom: 15,
   },
   signupText: {
-    color: "#000",
+    color: "#fff",
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 16,

@@ -13,6 +13,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "url": "https://u.expo.dev/"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "y",
@@ -32,13 +35,7 @@
       "output": "static"
     },
     "plugins": [
-      [
-        "expo-video",
-        {
-          "supportsBackgroundPlayback": false,
-          "supportsPictureInPicture": false
-        }
-      ],
+      "expo-router",
       [
         "expo-build-properties",
         {
@@ -50,14 +47,17 @@
             "enableMinifyInReleaseBuilds": true
           }
         }
-      ],
-      "./app-plugin.js"
+      ]
     ],
     "extra": {
       "eas": {
         "routerRoot": "/app",
-        "projectId": "3df3d0a4-94c9-45e4-bfd0-61e8e23871af"
-      }
+        "projectId": "d38ad9b1-12b9-447b-ac84-1956ef4f924f"
+      },
+      "router": {}
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }

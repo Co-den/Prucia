@@ -42,7 +42,7 @@ export default function AccountScreen({ navigation }) {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                   },
-                }
+                },
               );
 
               if (!response.ok) {
@@ -54,7 +54,7 @@ export default function AccountScreen({ navigation }) {
               logout();
               Alert.alert(
                 "Deleted",
-                "Your account has been permanently deleted."
+                "Your account has been permanently deleted.",
               );
             } catch (error) {
               Alert.alert("Error", error.message);
@@ -62,7 +62,7 @@ export default function AccountScreen({ navigation }) {
             }
           },
         },
-      ]
+      ],
     );
   };
 
@@ -77,9 +77,7 @@ export default function AccountScreen({ navigation }) {
         <View style={styles.info}>
           <Text style={styles.name}>{user?.firstName || "Your Name"}</Text>
           <Text style={styles.email}>{user?.email}</Text>
-          <Text style={styles.location}>
-            {user?.state || "No state set"}
-          </Text>
+          <Text style={styles.location}>{user?.state || "No state set"}</Text>
         </View>
       </View>
       <View style={styles.section}>
@@ -228,7 +226,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logoutButton: {
-    backgroundColor: "#f68b1e",
+    backgroundColor: "#ff6f61",
     paddingVertical: 14,
     paddingHorizontal: 32,
     borderRadius: 10,

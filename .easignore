@@ -1,37 +1,137 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# Dependencies
+
 node_modules/
 
 # Expo
+
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
 # Native
+
 .kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+_.orig._
+_.jks
+_.p8
+_.p12
+_.key
+\*.mobileprovision
 
 # Metro
-.metro-health-check*
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+.metro-health-check\*
+
+# Debug
+
+npm-debug._
+yarn-debug._
+yarn-error.\*
 
 # macOS
+
 .DS_Store
-*.pem
+\*.pem
 
-# local env files
-.env*.local
+# Local env files
 
-# typescript
-*.tsbuildinfo
+.env\*.local
+.env
+
+# TypeScript
+
+\*.tsbuildinfo
+
+# IDE
+
+.vscode/
+.idea/
+_.swp
+_.swo
+\*~
+
+# Testing
+
+**tests**/
+**/\*.test.js
+**/_.test.jsx
+\*\*/_.test.ts \*_/_.test.tsx
+coverage/
+.nyc_output/
+
+# Documentation
+
+docs/
+\*.md
+!README.md
+
+# Git
+
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Large asset sources (keep compressed versions)
+
+# Uncomment if you have these:
+
+# \*_/_.psd
+
+# \*_/_.sketch
+
+# \*_/_.fig
+
+# \*_/_.ai
+
+# \*_/_.svg (if you have many)
+
+# Videos (if not needed in app)
+
+# \*_/_.mp4
+
+# \*_/_.mov
+
+# \*_/_.avi
+
+# Large uncompressed images
+
+# \*_/_.tiff
+
+# \*_/_.bmp
+
+# Logs
+
+logs/
+\*.log
+
+# Build artifacts
+
+build/
+.expo-shared/
+
+# OS files
+
+Thumbs.db
+desktop.ini
+
+# Temporary files
+
+tmp/
+temp/
+\*.tmp
+
+# Backup files
+
+_.backup
+_.bak
+\*.old

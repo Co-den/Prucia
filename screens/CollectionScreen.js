@@ -8,16 +8,15 @@ import {
   Image,
 } from 'react-native';
 
-// ✅ Updated product data to use `images` array
 const productsByCategory = {
   Dresses: [
     {
       id: '1',
       name: 'Silk Maxi Dress',
       images: [
-        {uri: '../assets/products/p1.jpg'},
-        {uri: '../assets/products/p2.jpg'},
-        {uri: '../assets/products/p3.jpg'},
+        require('../assets/products/p1.jpg'),
+        require('../assets/products/p2.jpg'),
+        require('../assets/products/p3.jpg'),
       ],
       price: 20000,
     },
@@ -25,19 +24,19 @@ const productsByCategory = {
       id: '2',
       name: 'Red Carpet Gown',
       images: [
-        {uri: '../assets/products/p2.jpg'},
-        {uri: '../assets/products/p2.jpg'},
+        require('../assets/products/p2.jpg'),
+        require('../assets/products/p2.jpg'),
       ],
       price: 35000,
     },
   ],
-  Accessories: [
+  Makeup: [
     {
       id: '3',
       name: 'Gold Earrings',
       images: [
-        {uri: '../assets/products/p3.jpg'},
-        {uri: '../assets/products/p3.jpg'},
+        require('../assets/products/p3.jpg'),
+        require('../assets/products/p3.jpg'),
       ],
       price: 5000,
     },
@@ -45,20 +44,20 @@ const productsByCategory = {
   Bridal: [
     {
       id: '4',
-      name: 'Traditional Bridal Attire 1',
+      name: 'Traditional Bridal Attire',
       images: [
-        {uri: '../assets/products/k2.jpg'},
-        {uri: '../assets/products/k2.jpg'},
+        require('../assets/products/k2.jpg'),
+        require('../assets/products/k2.jpg'),
       ],
       price: 15000,
     },
     {
       id: '5',
-      name: 'Traditional Bridal Attire 2',
+      name: 'White Bridal Gown',
       images: [
-        {uri: '../assets/products/b1.jpg'},
-        {uri: '../assets/products/b2.jpg'},
-        {uri: '../assets/products/b3.jpg'},
+        require('../assets/k5.jpeg'),
+        require('../assets/k6.jpeg'),
+        require('../assets/k7.jpeg'),
       ],
       price: 60000,
     },
